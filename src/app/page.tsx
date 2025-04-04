@@ -138,51 +138,64 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-yellow-100 min-h-screen flex justify-center items-start px-4 py-10">
-      <div className="bg-[#fff9ec] p-8 rounded-lg shadow-lg max-w-4xl w-full">
-        <h1 className="text-4xl font-bold font-serif text-black text-center mb-2">
-          The <span className="text-red-700 italic">Official</span>
-        </h1>
-        <h2 className="text-5xl font-extrabold font-serif text-green-800 text-center mb-4">
-          Cal Poly SLO Purity Test
-        </h2>
-        <p className="italic font-serif text-center text-gray-800 mb-6">Have you ever…</p>
-
-        <p className="text-center text-black font-serif text-[15px] leading-relaxed mb-6">
-          The Purity Test is a voluntary opportunity for Mustangs to reflect on their Cal Poly journey and the unique experiences that make up SLO life.
-          <br /><br />
-          <span className="font-bold text-red-600">
-            Caution: This is not a bucket list. Completing all the items on this list means you're cooked.
-          </span>
-          <br />
-          Check every item you have done, your purity score will be calculated at the end.
-        </p>
-
-        <ul className="space-y-4 text-black font-serif text-[14px] leading-snug">
-          {questions.map((q, i) => (
-            <li key={i} className="flex items-start">
-              <input
-                type="checkbox"
-                checked={checked[i]}
-                onChange={() => handleCheck(i)}
-                className="mt-1 mr-3"
-              />
-              <span>{i + 1}. {q}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-6 text-center">
-          <Link href="/results">
-            <button
-              onClick={handleSaveScore}
-              className="bg-green-900 hover:bg-green-800 text-white font-bold py-2 px-6 rounded-lg transition duration-200 font-serif"
-            >
-              Calculate My Cal Poly Purity Score
-            </button>
-          </Link>
+    <main className="relative bg-yellow-100 min-h-screen px-4 py-10 overflow-hidden">
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/mustang.png')",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '100px',
+          backgroundPosition: 'center',
+          opacity: 0.025,
+        }}
+      />
+  
+      <div className="relative z-10 flex justify-center items-start">
+        <div className="bg-[#fff9ec] p-8 rounded-lg shadow-lg max-w-4xl w-full">
+          <h1 className="text-4xl font-bold font-serif text-black text-center mb-2">
+            The <span className="text-red-700 italic">Official</span>
+          </h1>
+          <h2 className="text-5xl font-extrabold font-serif text-green-800 text-center mb-4">
+            Cal Poly SLO Purity Test
+          </h2>
+          <p className="italic font-serif text-center text-gray-800 mb-6">Have you ever…</p>
+  
+          <p className="text-center text-black font-serif text-[15px] leading-relaxed mb-6">
+            The Purity Test is a voluntary opportunity for Mustangs to reflect on their Cal Poly journey and the unique experiences that make up SLO life.
+            <br /><br />
+            <span className="font-bold text-red-600">
+              Caution: This is not a bucket list. Completing all the items on this list means you're cooked.
+            </span>
+            <br />
+            Check every item you have done, your purity score will be calculated at the end.
+          </p>
+  
+          <ul className="space-y-4 text-black font-serif text-[14px] leading-snug">
+            {questions.map((q, i) => (
+              <li key={i} className="flex items-start">
+                <input
+                  type="checkbox"
+                  checked={checked[i]}
+                  onChange={() => handleCheck(i)}
+                  className="mt-1 mr-3"
+                />
+                <span>{i + 1}. {q}</span>
+              </li>
+            ))}
+          </ul>
+  
+          <div className="mt-6 text-center">
+            <Link href="/results">
+              <button
+                onClick={handleSaveScore}
+                className="bg-green-900 hover:bg-green-800 text-white font-bold py-2 px-6 rounded-lg transition duration-200 font-serif"
+              >
+                Calculate My Cal Poly Purity Score
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </main>
-  );
+  );  
 }
