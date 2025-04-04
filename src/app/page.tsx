@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+import { supabase } from '../../lib/supabaseClient';
 
 
 const questions = [
@@ -120,8 +121,20 @@ export default function Home() {
 
   const score = 100 - checked.filter(Boolean).length;
 
-  const handleSaveScore = () => {
+  const handleSaveScore = async () => {
     localStorage.setItem('calpolyScore', score.toString());
+
+    const { data, error } = await supabase
+      .from('scores')
+      .insert([{ score }]);
+    
+    console.log('Sending to Supabase:', { score });
+
+    if (error) {
+      console.error('Failed to save score to Supabase:', error);
+    } else {
+      console.log('Score saved:', data);
+    }
   };
 
   return (
