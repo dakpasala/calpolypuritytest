@@ -15,7 +15,7 @@ const questions = [
   "Changed your major?",
   "Cried over a midterm or final?",
   "Used ChatGPT to do an assignment or exam?",
-  "Is a CS, EE, or CPE major?",
+  "Is an engineering major?",
   "Missed a final on accident?",
   "Decided to pursue a startup instead of a traditional job?",
   "Already have an internship or full-time offer lined up for summer?",
