@@ -76,7 +76,7 @@ const questions = [
   "Biked on campus and almost got hit or hit someone?",
   "Been to a party that got shut down by cops?",
   "Had someone crash on your couch after a party?",
-  "Gotten food from Taqueria El Guerro or Dominos at midnight?",
+  "Gotten food from Taqueria Santa Cruz or Dominos at midnight?",
   "Had someone steal the machine you were using in the rec?",
   "Changed your major atleast once?",
   "Gone to a frat/sororiety formal?",
