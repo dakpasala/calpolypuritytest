@@ -173,18 +173,24 @@ export default function Home() {
   
           <ul className="space-y-4 text-black font-serif text-[14px] leading-snug">
             {questions.map((q, i) => (
-              <li key={i} className="flex items-start">
-                <input
-                  type="checkbox"
-                  checked={checked[i]}
-                  onChange={() => handleCheck(i)}
-                  className="mt-1 mr-3"
-                />
-                <span>{i + 1}. {q}</span>
+              <li key={i}>
+                <label
+                  htmlFor={`q-${i}`}
+                  className="flex items-start cursor-pointer hover:bg-yellow-200 px-2 py-1 rounded transition"
+                >
+                  <input
+                    id={`q-${i}`}
+                    type="checkbox"
+                    checked={checked[i]}
+                    onChange={() => handleCheck(i)}
+                    className="mt-1 mr-3"
+                  />
+                  <span>{i + 1}. {q}</span>
+                </label>
               </li>
             ))}
           </ul>
-  
+
           <div className="mt-6 text-center">
             <Link href="/results">
               <button
