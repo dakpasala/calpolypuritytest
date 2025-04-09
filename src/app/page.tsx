@@ -7,7 +7,7 @@ import { supabase } from '../../lib/supabaseClient';
 
 
 const questions = [
-  "Pulled an all-nighter at Kennedy Library?",
+  "Pulled an all-nighter finishing an assignment?",
   "Secretly hated your frat/sororiety?",
   "Complained about the lack of places to study?",
   "Considered dropping out of school?",
@@ -78,7 +78,7 @@ const questions = [
   "Had someone crash on your couch after a party?",
   "Gotten food from Taqueria Santa Cruz or Dominos at midnight?",
   "Had someone steal the machine you were using in the rec?",
-  "Changed your major atleast once?",
+  "Talked bad about your major?",
   "Gone to a frat/sororiety formal?",
   "Lost your PolyCard and had to replace it?",
   "Stayed on campus over break and regretted it?",
